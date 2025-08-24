@@ -38,3 +38,7 @@ exports.signin = async (req,res) =>{
         res.status(500).json({error: err.message})
     }
 }
+
+exports.home = async (req,res) =>{
+    res.json({message:"Welcome to home"})
+}

@@ -1,4 +1,7 @@
+const express = require('express')
 const connectDB = require('./config/db')
-const Item = require('./models/itemModel')
+const authRoutes = require('./routes/authRoutes')
 
+const app = express();
 connectDB();
+
