@@ -11,7 +11,7 @@ function Signup() {
   };
 
   const handleSubmit = async (e) => {
-    e.perventDefault();
+    e.preventDefault();
     try{
         const res = await api.post("/signup", formData);
         alert(res.data.message)

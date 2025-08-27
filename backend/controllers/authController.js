@@ -4,9 +4,9 @@ const User = require('../models/itemModel')
 
 exports.signup = async (req,res) =>{
     try{
-        console.log("im Start crteate user");
         const {name, email, password} = req.body;
         const hashedPassword = await bcrypt.hash(password, 10)
+        console.log({name, email, password});
         const newUser = await User.create({
             name,
             email,
