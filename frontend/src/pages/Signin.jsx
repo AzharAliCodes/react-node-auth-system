@@ -11,7 +11,7 @@ function Signin() {
     }
 
     const handleSubmit = async (e) => {
-        e.pareventDefault();
+        e.preventDefault();
         try{
             const res = await api.post('/signin', formData)
             localStorage,setItem("token", res.data.token)
