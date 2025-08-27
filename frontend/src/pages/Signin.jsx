@@ -14,9 +14,9 @@ function Signin() {
         e.preventDefault();
         try{
             const res = await api.post('/signin', formData)
-            localStorage,setItem("token", res.data.token)
+            localStorage.setItem("token", res.data.token)
             alert(res.data.message)
-            navigate('/home')
+            navigate('/')
         } catch(err){
             alert(err.response?.data?.message || "Signin failed")
         }
