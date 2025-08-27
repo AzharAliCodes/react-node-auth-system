@@ -4,6 +4,7 @@ const User = require('../models/itemModel')
 
 exports.signup = async (req,res) =>{
     try{
+        console.log("im Start crteate user");
         const {name, email, password} = req.body;
         const hashedPassword = await bcrypt.hash(password, 10)
         const newUser = await User.create({
@@ -11,6 +12,7 @@ exports.signup = async (req,res) =>{
             email,
             password: hashedPassword
         })
+        console.log("im crteated user");  
         res.status(201).json({ message: "User crated successfully", user: newUser})
     } catch (err) {
         res.status(500).json({error: err.message})
